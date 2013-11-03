@@ -1,0 +1,100 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+<title>Kasuaris latest news reader</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+<script src="http://cdn.app-framework-software.intel.com/2.0/appframework.min.js" type="text/javascript"></script>
+<script src="http://cdn.app-framework-software.intel.com/2.0/appframework.ui.min.js" type="text/javascript"></script>
+
+<script src="js/rssFeed.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<link rel="stylesheet" type="text/css" href="css/af.ui.css" />
+<link rel="stylesheet" type="text/css" href="css/icons.css" />
+
+<style>
+    /* Prevent copy paste for all elements except text fields */
+    *  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+    input, textarea  { -webkit-user-select:text; }
+    
+    /* Set up the page with a default background image */
+    body {
+        background-color:#fff;
+        color:#000;
+        font-family:Arial;
+        font-size:18pt;
+        margin:0px;padding:0px;
+        background-image:url('images/background.jpg');
+    }
+</style>
+<script src='intelxdk.js'></script>
+<script type="text/javascript">
+  rssFeed(12);
+  
+/* This function runs once the page is loaded, but appMobi is not yet active */
+var init = function(){
+};
+    
+window.addEventListener("load",init,false);  
+
+/* This code prevents users from dragging the page */
+var preventDefaultScroll = function(event) {
+    event.preventDefault();
+    window.scroll(0,0);
+    return false;
+};
+    
+document.addEventListener('touchmove', preventDefaultScroll, false);
+
+/* This code is used to run as soon as appMobi activates */
+var onDeviceReady=function(){
+	//hide splash screen
+	AppMobi.device.hideSplashScreen();	
+};
+    
+document.addEventListener("appMobi.device.ready",onDeviceReady,false);
+</script>
+
+</head>
+<body>
+
+  <div id="afui"> 
+    <div id="content">
+      <div class="panel" title="<img src='images/logo_kasuaris.png'>"  id="listviewpage" selected="selected">
+        <ul id="rss_ul" class="list" style="font-size: 11pt">
+        </ul>
+      </div>
+      
+      <div id="page0" class="panel"><div id="cont0">Pagina1</div></div>
+      <div id="page1" class="panel"><div id="cont1">Pagina2</div></div>
+      <div id="page2" class="panel"><div id="cont2">Pagina3</div></div>
+      <div id="page3" class="panel"><div id="cont3">Pagina4</div></div>
+      <div id="page4" class="panel"><div id="cont4">Pagina5</div></div>
+      <div id="page5" class="panel"><div id="cont5">Pagina6</div></div>
+      <div id="page6" class="panel"><div id="cont6">Pagina7</div></div>
+      <div id="page7" class="panel"><div id="cont7">Pagina8</div></div>
+      <div id="page8" class="panel"><div id="cont8">Pagina9</div></div>
+      <div id="page9" class="panel"><div id="cont9">Pagina10</div></div>
+      <div id="page10" class="panel"><div id="cont10">Pagina11</div></div>
+      <div id="page11" class="panel"><div id="cont11">Pagina12</div></div>
+      <div id="page12" class="panel"><div id="cont12">Pagina13</div></div>
+      <div id="page13" class="panel"><div id="cont13">Pagina14</div></div>
+      <div id="page14" class="panel"><div id="cont14">Pagina15</div></div>
+    </div>
+    
+    <div id="navbar">
+        <div id="email" style="margin-left: 10px;margin-top:8px;display: block">
+          <p style="font-size:9pt;line-height: 12pt">Wil je iets delen met ons? Heb je vragen?<br>Stuur ons een mailtje: <span style="color:blue">hoofdredactie@kasuaris.com</span></p>
+        </div>
+        <div id="back-button" style="float:left;cursor: pointer;width:64px;height:48px;display: none;margin-left: 6px" onClick="javascript:goBack();" >
+          <img src="images/back-button.png" >
+        </div>
+        <div id="logo-kasuaris" style="float:left;margin-left: 42px;margin-top: 11px">
+          <img src="images/logo_kasuaris.png">
+        </div>
+
+    </div>
+  </div>
+</body>
+</html>
